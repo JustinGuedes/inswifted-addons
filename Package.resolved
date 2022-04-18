@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "inswifted",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JustinGuedes/inswifted.git",
+      "state" : {
+        "revision" : "3b9fb13629c6f24cde8a96840b968aea3f0f54ff",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "prelude",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JustinGuedes/prelude.git",
+      "state" : {
+        "revision" : "2967cf36a9caaa1a9e601598def5d0499a4a463e",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
