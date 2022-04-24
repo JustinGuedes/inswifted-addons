@@ -22,6 +22,7 @@ public struct InTabView<Loading: View, NoTabs: View>: View {
             case (false, true):
                 noTabsContent()
             case (false, false):
+#if os(iOS)
                 TabView {
                     ForEach(viewModel.tabs, id: \.title) { tab in
                         tab.view
@@ -36,6 +37,20 @@ public struct InTabView<Loading: View, NoTabs: View>: View {
                             }
                     }
                 }
+#elseif os(macOS)
+                NavigationView {
+                    List(viewModel.tabs, id: \.title) { tab in
+                        NavigationLink(destination: tab.view) {
+                            switch tab.icon {
+                            case .systemName(let name):
+                                Label(tab.title, systemImage: name)
+                            case .asset(let name):
+                                Label(tab.title, image: name)
+                            }
+                        }
+                    }
+                }
+#endif
             }
         }
         .onAppear {

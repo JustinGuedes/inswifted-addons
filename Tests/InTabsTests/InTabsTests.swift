@@ -1,8 +1,11 @@
-//
-//  File.swift
-//  
-//
-//  Created by Justin Guedes on 2022/04/18.
-//
+import XCTest
+@testable import InTabs
 
-import Foundation
+final class InTabsTests: XCTestCase {
+    func testExample() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct
+        // results.
+        XCTAssertEqual("Hello, World!", "Hello, World!")
+    }
+}

@@ -3,14 +3,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "InUIdo",
+    name: "InSwifted-Addons",
     platforms: [
         .iOS(.v14), .macOS(.v11)
     ],
     products: [
         .library(
-            name: "InModular",
-            targets: ["InModular"]),
+            name: "InModules",
+            targets: ["InModules"]),
         .library(
             name: "InTabs",
             targets: ["InTabs"])
@@ -21,13 +21,13 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "InModular",
+            name: "InModules",
             dependencies: [
                 .product(name: "InSwifted", package: "inswifted")
             ]),
         .testTarget(
-            name: "InModularTests",
-            dependencies: ["InModular"]),
+            name: "InModulesTests",
+            dependencies: ["InModules"]),
         .target(
             name: "InTabs",
             dependencies: [

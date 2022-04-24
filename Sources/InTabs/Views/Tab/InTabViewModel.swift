@@ -18,9 +18,22 @@ class InTabViewModel: ObservableObject {
     func loadTabs() async {
         isLoading = true
         tabs = await providers
-            .flatMap { await $0.provide() }
-            .sorted { $0.order < $1.order }
+            .flatMap(getTab)
+            .sorted(by: tabOrder)
         isLoading = false
+    }
+    
+}
+
+private extension InTabViewModel {
+    
+    func getTab(from provider: TabProvider) async -> Tab? {
+        let builder = TabBuilder()
+        return await provider.provide(builder)
+    }
+    
+    func tabOrder(_ first: Tab, _ second: Tab) -> Bool {
+        return first.order < second.order
     }
     
 }
