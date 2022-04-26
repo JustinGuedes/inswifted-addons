@@ -3,17 +3,17 @@ import SwiftUI
 public struct ContainerGroup<Content: View>: Scene {
     
     var container: Container
-    var content: Content
+    var content: () -> Content
     
-    public init(modules: [Module.Type], @ViewBuilder content: () -> Content) {
-        self.content = content()
+    public init(modules: [Module.Type], @ViewBuilder content: @escaping () -> Content) {
+        self.content = content
         self.container = Container(modules: modules)
         self.container.start()
     }
     
     public var body: some Scene {
         WindowGroup {
-            content
+            content()
         }
     }
     
