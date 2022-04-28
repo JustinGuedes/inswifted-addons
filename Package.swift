@@ -12,6 +12,9 @@ let package = Package(
             name: "InModules",
             targets: ["InModules"]),
         .library(
+            name: "InConfig",
+            targets: ["InConfig"]),
+        .library(
             name: "InTabs",
             targets: ["InTabs"])
     ],
@@ -28,6 +31,14 @@ let package = Package(
         .testTarget(
             name: "InModulesTests",
             dependencies: ["InModules"]),
+        .target(
+            name: "InConfig",
+            dependencies: [
+                .product(name: "InSwifted", package: "inswifted")
+            ]),
+        .testTarget(
+            name: "InConfigTests",
+            dependencies: ["InConfig"]),
         .target(
             name: "InTabs",
             dependencies: [

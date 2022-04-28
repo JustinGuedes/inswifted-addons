@@ -5,6 +5,7 @@ InSwifted addons is a repo with multiple packages/podspecs that use InSwifted de
 ## Packages
 1. [Modules](#Modules)
 2. [Tabs](#Tabs)
+3. [Config](#Config)
 
 ### Modules
 
@@ -13,6 +14,10 @@ Allows for the app to be modularised into separate `Module`s. More information c
 ### Tabs
 
 Provides a modular tab view which allows providing multiple `TabProvider`s to the `InTabView`. More information coming soon.
+
+### Config
+
+Allows the app to load config from property lists, etc.
 
 ## License
 
