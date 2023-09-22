@@ -22,7 +22,7 @@ public struct InTabView<Loading: View, NoTabs: View>: View {
             case (false, true):
                 noTabsContent()
             case (false, false):
-#if os(iOS)
+#if os(iOS) || os(watchOS)
                 TabView {
                     ForEach(viewModel.tabs, id: \.title) { tab in
                         tab.view
